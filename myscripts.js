@@ -1,5 +1,3 @@
-console.log("Hello World");
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -63,8 +61,23 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(){
+    for (let i = 0; i<5; i++){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+    console.log("player score: " + humanScore);
+    console.log("computer score: " + computerScore);
+    if (humanScore > computerScore){
+        console.log("Player WINS");
+    }
+    else if (humanScore < computerScore){
+        console.log("Computer WINS")
+    }
+    else{
+        console.log("DRAWWW TIE SCORE");
+    }
+}
 
-playRound(humanSelection, computerSelection);
-
+playGame();
